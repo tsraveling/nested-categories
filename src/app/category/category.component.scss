@@ -1,0 +1,10 @@
+a, span.add-span {
+  padding-left: 10px;
+  font-size: 12px;
+  color: darkgrey;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}

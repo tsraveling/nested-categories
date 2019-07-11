@@ -1,0 +1,45 @@
+<strong
+  *ngIf="!currentlyEditing"
+  (click)="startEditing()"
+>
+  {{category.name}}
+</strong>
+
+<input
+  autofocus
+  *ngIf="currentlyEditing"
+  [(ngModel)]="category.name"
+  (blur)="endEditing()"
+  (keyup)="onKeyup($event)"
+/>
+
+<span class="add-span">
+  <span
+    *ngIf="addChildName===null"
+    class="add-child"
+    (click)="startAddingChild()"
+  >
+      Add child
+    </span>
+    <input
+      [autofocus]="addChildName===''"
+      *ngIf="addChildName!==null"
+      [(ngModel)]="addChildName"
+      (blur)="finishAddingChild()"
+      (keyup)="onAddChildKeyup($event)"
+    />
+</span>
+
+<a
+  (click)="hitDelete()"
+  *ngIf="category.parentCategory!==null"
+>
+  Delete
+</a>
+
+<ul>
+  <li *ngFor="let cat of category.children">
+    <app-category [category]="cat"></app-category>
+  </li>
+
+</ul>

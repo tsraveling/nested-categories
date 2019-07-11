@@ -1,0 +1,9 @@
+a, span.add-span {
+  padding-left: 10px;
+  font-size: 12px;
+  color: darkgrey;
+  cursor: pointer; }
+  a:hover, span.add-span:hover {
+    color: black; }
+
+/*# sourceMappingURL=category.component.css.map */
